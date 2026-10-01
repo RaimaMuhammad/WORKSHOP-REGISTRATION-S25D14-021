@@ -9,7 +9,7 @@ const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
 const feedback = document.getElementById("feedback");
 
-// JS1: Add the three workshop names, then create one <option> per workshop.
+// JS1: Adding the three workshop names, then creating one <option> per workshop.
 const workshops = [
   "HTML Essentials", "CSS Studio", "JavaScript Lab"
 ];
@@ -50,7 +50,7 @@ form.addEventListener("submit", (event) => {
     password.setCustomValidity("");
   }
 
-  // JS2: Compare password and confirmPassword with an if/else structure.
+  // JS2: Comparing the password and confirming the password with an if/else structure.
   if (password.value !== confirmPassword.value) {
     confirmPassword.setCustomValidity(
       "The passwords must match."
@@ -59,7 +59,7 @@ form.addEventListener("submit", (event) => {
     confirmPassword.setCustomValidity("");
   }
 
-  // JS3: Run the browser's built-in validation.
+  // JS3: Running the browser's built-in validation.
   if (!form.reportValidity()) {
     feedback.textContent =
       "Check the highlighted fields and try again.";
@@ -68,7 +68,7 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  // JS4: Get the numeric value from the seats control.
+  // JS4: Getting the numeric value from the seats control.
   const seatCount = seats.valueAsNumber;
 
   let bookingType;
