@@ -11,7 +11,7 @@ const feedback = document.getElementById("feedback");
 
 // JS1: Adding the three workshop names, then creating one <option> per workshop.
 const workshops = [
-  "HTML Essentials", "CSS Studio", "JavaScript Lab"
+  "HTML Essentials", "CSS Studio", "JavaScript Lab", "Web Design Workshop"
 ];
 
 for (const workshop of workshops) {
@@ -90,4 +90,16 @@ form.addEventListener("input", (event) => {
   if (event.target === fullName) fullName.setCustomValidity("");
   if (event.target === password) password.setCustomValidity("");
   if (event.target === confirmPassword) confirmPassword.setCustomValidity("");
+});
+
+// Reset button: clear custom validity messages, feedback and validation styling.
+form.addEventListener("reset", () => {
+  fullName.setCustomValidity("");
+  password.setCustomValidity("");
+  confirmPassword.setCustomValidity("");
+
+  feedback.hidden = true;
+  feedback.className = "feedback";
+
+  form.classList.remove("was-validated");
 });
